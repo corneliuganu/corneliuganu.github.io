@@ -1,0 +1,207 @@
+backend:
+  name: github
+  repo: corneliuganu/corneliuganu.github.io
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "portfolio"
+    label: "Portofoliu"
+    folder: "content/portfolio"
+    create: true
+    slug: "{{slug}}"
+    view_groups:
+      - label: "Categorie"
+        field: "category"
+    view_filters:
+      - label: "Nunți"
+        field: "category"
+        pattern: "Nuntă"
+      - label: "Botezuri"
+        field: "category"
+        pattern: "Botez"
+      - label: "Portrete"
+        field: "category"
+        pattern: "Portret"
+      - label: "Peisaje"
+        field: "category"
+        pattern: "Peisaj"
+    fields:
+      - { label: "Titlu", name: "title", widget: "string" }
+      - { label: "Categorie", name: "category", widget: "select", options: ["Nuntă", "Botez", "Portret", "Peisaj"] }
+      - { label: "Imagine", name: "image", widget: "image" }
+      - { label: "Descriere", name: "description", widget: "text", required: false }
+      - { label: "Data", name: "date", widget: "datetime" }
+      - { label: "Featured", name: "featured", widget: "boolean", default: false }
+      - label: "Upload fotografii (bulk)"
+        name: "photos_bulk"
+        widget: "file"
+        multiple: true
+        required: false
+        hint: "Încarcă mai multe fotografii dintr-un singur pas. Site-ul va folosi automat aceste imagini în galerie (alt-urile vor fi goale, le poți completa mai jos dacă vrei)."
+      - label: "Fotografii galerie"
+        name: "photos"
+        widget: "list"
+        required: false
+        summary: "{{fields.image}}"
+        fields:
+          - { label: "Imagine", name: "image", widget: "image" }
+          - { label: "Alt", name: "alt", widget: "string" }
+
+  - name: "pages"
+    label: "Pagini"
+    files:
+      - label: "Acasă"
+        name: "home"
+        file: "content/pages/home.md"
+        fields:
+          - { label: "Badge Hero (deasupra numelui)", name: "hero_badge", widget: "string", required: false }
+          - { label: "Titlu Hero (nume)", name: "hero_title", widget: "string" }
+          - { label: "Subtitlu Hero (paragraf)", name: "hero_subtitle", widget: "text" }
+          - { label: "Imagine Hero (fundal)", name: "hero_image", widget: "image" }
+          - { label: "CTA principală (buton Vezi Portofoliul)", name: "hero_cta_primary", widget: "string", required: false }
+          - { label: "CTA secundară (buton Contactează-mă)", name: "hero_cta_secondary", widget: "string", required: false }
+          - { label: "Stat 1 Număr", name: "stat1_number", widget: "string" }
+          - { label: "Stat 1 Label", name: "stat1_label", widget: "string" }
+          - { label: "Stat 2 Număr", name: "stat2_number", widget: "string" }
+          - { label: "Stat 2 Label", name: "stat2_label", widget: "string" }
+          - { label: "Stat 3 Număr", name: "stat3_number", widget: "string" }
+          - { label: "Stat 3 Label", name: "stat3_label", widget: "string" }
+          - { label: "Titlu secțiune Lucrări recente", name: "featured_title", widget: "string", required: false }
+          - { label: "Subtitlu secțiune Lucrări recente", name: "featured_subtitle", widget: "text", required: false }
+          - { label: "Text buton Vezi tot portofoliul", name: "featured_cta", widget: "string", required: false }
+
+      - label: "Portofoliu"
+        name: "portfolio_page"
+        file: "content/pages/portfolio.md"
+        fields:
+          - { label: "Titlu", name: "title", widget: "string" }
+          - { label: "Subtitlu", name: "subtitle", widget: "text", required: false }
+
+      - label: "Despre"
+        name: "about"
+        file: "content/pages/about.md"
+        fields:
+          - { label: "Etichetă sus (ex. DESPRE MINE)", name: "section_label", widget: "string", required: false }
+          - { label: "Titlu secțiune (ex. Povestea din spatele obiectivului)", name: "title", widget: "string" }
+          - { label: "Conținut (text Despre mine)", name: "body", widget: "markdown" }
+          - { label: "Imagine Despre mine (portret)", name: "image", widget: "image" }
+          - { label: "Ani experiență (pentru alte secțiuni)", name: "years_experience", widget: "number" }
+
+      - label: "Contact"
+        name: "contact_page"
+        file: "content/pages/contact.md"
+        fields:
+          - { label: "Etichetă sus (ex. CONTACT)", name: "section_label", widget: "string", required: false }
+          - { label: "Titlu", name: "title", widget: "string" }
+          - { label: "Subtitlu", name: "subtitle", widget: "text" }
+          - { label: "CTA", name: "cta_text", widget: "string", required: false }
+
+  - name: "settings"
+    label: "Setări"
+    files:
+      - label: "Contact"
+        name: "contact"
+        file: "content/settings/contact.json"
+        fields:
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Telefon", name: "phone", widget: "string" }
+          - { label: "Locație", name: "location", widget: "string" }
+
+      - label: "Social"
+        name: "social"
+        file: "content/settings/social.json"
+        fields:
+          - { label: "Instagram URL", name: "instagram", widget: "string", required: false }
+          - { label: "Facebook URL", name: "facebook", widget: "string", required: false }
+          - { label: "YouTube URL", name: "youtube", widget: "string", required: false }
+
+      - label: "Footer"
+        name: "footer"
+        file: "content/settings/footer.json"
+        fields:
+          - { label: "Titlu brand", name: "brand_title", widget: "string" }
+          - { label: "Subtitlu brand", name: "brand_subtitle", widget: "text" }
+          - { label: "Text copyright", name: "copyright", widget: "string" }
+
+      - label: "Filtre Portofoliu"
+        name: "portfolio_filters"
+        file: "content/settings/portfolio-filters.json"
+        fields:
+          - label: "Categorii"
+            name: "categories"
+            widget: "list"
+            default: ["Nuntă", "Botez", "Portret", "Peisaj"]
+
+      - label: "Branding"
+        name: "branding"
+        file: "content/settings/branding.json"
+        fields:
+          - label: "Logo (PNG pentru header)"
+            name: "logo"
+            widget: "image"
+            hint: "Logo-ul principal al site-ului (de preferat PNG cu fundal transparent), folosit în header."
+            required: false
+          - label: "Imagine default Open Graph (1200x630)"
+            name: "og_default"
+            widget: "image"
+            hint: "Imagine de brand folosită automat la share (Facebook, WhatsApp etc.) pentru paginile care nu au o imagine OG proprie."
+            required: false
+          - label: "Favicon"
+            name: "favicon"
+            widget: "image"
+            hint: "Iconița mică din tab-ul browserului (de obicei pătrată, 32x32 sau 64x64 px)."
+            required: false
+
+  - name: "seo"
+    label: "SEO"
+    files:
+      - label: "Acasă"
+        name: "home"
+        file: "content/seo/home.json"
+        fields:
+          - { label: "Titlu SEO pagină", name: "title", widget: "string" }
+          - { label: "Descriere SEO (meta)", name: "description", widget: "text" }
+          - { label: "Schema.org Nume brand", name: "schema_name", widget: "string" }
+          - { label: "Schema.org Descriere", name: "schema_description", widget: "text" }
+          - { label: "Schema.org Oraș", name: "schema_city", widget: "string" }
+          - { label: "Limba site-ului (ex. ro-RO)", name: "language", widget: "string", required: false, hint: "Cod de limbă pentru homepage, recomandat ro-RO pentru limba română." }
+          - { label: "Canonical URL", name: "canonical", widget: "string", required: false }
+          - { label: "Open Graph Image (1200x630)", name: "og_image", widget: "image", required: false }
+
+      - label: "Portofoliu"
+        name: "portfolio"
+        file: "content/seo/portfolio.json"
+        fields:
+          - { label: "Titlu SEO pagină", name: "title", widget: "string" }
+          - { label: "Descriere SEO (meta)", name: "description", widget: "text" }
+          - { label: "Open Graph Image (1200x630)", name: "og_image", widget: "image", required: false }
+
+      - label: "Despre"
+        name: "about"
+        file: "content/seo/about.json"
+        fields:
+          - { label: "Titlu SEO pagină", name: "title", widget: "string" }
+          - { label: "Descriere SEO (meta)", name: "description", widget: "text" }
+          - { label: "Open Graph Image (1200x630)", name: "og_image", widget: "image", required: false }
+
+      - label: "Contact"
+        name: "contact"
+        file: "content/seo/contact.json"
+        fields:
+          - { label: "Titlu SEO pagină", name: "title", widget: "string" }
+          - { label: "Descriere SEO (meta)", name: "description", widget: "text" }
+          - { label: "Open Graph Image (1200x630)", name: "og_image", widget: "image", required: false }
+
+  - name: "admin_help"
+    label: "Ghid Admin"
+    files:
+      - label: "Cum folosești Sveltia"
+        name: "admin_readme"
+        file: "content/admin/help.md"
+        fields:
+          - label: "Instrucțiuni pentru utilizator"
+            name: "body"
+            widget: "markdown"
+            hint: "Un ghid simplu care explică ce poți modifica în fiecare secțiune (Pagini, Portofoliu, Setări, SEO, Branding)."
