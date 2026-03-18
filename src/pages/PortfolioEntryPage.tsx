@@ -143,7 +143,7 @@ const PortfolioEntryPage = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-background/90 backdrop-blur-sm"
+            className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm"
             onClick={() => setLightboxIdx(null)}
           >
             <div className="absolute inset-0 flex items-center justify-center p-4 md:p-8">
@@ -157,25 +157,25 @@ const PortfolioEntryPage = () => {
               >
                 <button
                   type="button"
-                  className="absolute -top-12 right-0 inline-flex items-center gap-2 px-4 py-2 rounded-sm border border-border bg-background/50 text-foreground hover:bg-background transition-all font-body text-xs tracking-widest uppercase"
+                  aria-label="Închide"
+                  className="fixed right-8 top-7 text-white/80 hover:text-white transition-colors"
                   onClick={() => setLightboxIdx(null)}
                 >
-                  <X size={16} />
-                  Închide
+                  <X size={22} />
                 </button>
 
-                <div className="relative overflow-hidden rounded-sm border border-border bg-card">
+                <div className="relative mx-auto w-fit max-w-full">
                   <img
                     src={photos[lightboxIdx].src}
                     alt={photos[lightboxIdx].alt}
-                    className="w-full h-[75vh] object-contain bg-background"
+                    className="max-h-[75vh] w-auto max-w-[calc(100vw-2rem)] md:max-w-[calc(100vw-4rem)] object-contain"
                   />
 
                   {photos.length > 1 ? (
                     <>
                       <button
                         type="button"
-                        className="absolute left-3 top-1/2 -translate-y-1/2 inline-flex items-center justify-center w-11 h-11 rounded-sm border border-border bg-background/60 hover:bg-background transition-all"
+                        className="fixed left-10 top-1/2 -translate-y-1/2 inline-flex items-center justify-center w-11 h-11 rounded-full bg-black/30 text-white/90 hover:text-white hover:bg-black/45 transition-all border border-white/15"
                         onClick={() =>
                           setLightboxIdx(
                             (prev) =>
@@ -186,11 +186,11 @@ const PortfolioEntryPage = () => {
                         }
                         aria-label="Imagine anterioară"
                       >
-                        <ChevronLeft size={18} />
+                        <ChevronLeft size={20} />
                       </button>
                       <button
                         type="button"
-                        className="absolute right-3 top-1/2 -translate-y-1/2 inline-flex items-center justify-center w-11 h-11 rounded-sm border border-border bg-background/60 hover:bg-background transition-all"
+                        className="fixed right-10 top-1/2 -translate-y-1/2 inline-flex items-center justify-center w-11 h-11 rounded-full bg-black/30 text-white/90 hover:text-white hover:bg-black/45 transition-all border border-white/15"
                         onClick={() =>
                           setLightboxIdx((prev) =>
                             prev === null ? prev : (prev + 1) % photos.length
@@ -198,13 +198,27 @@ const PortfolioEntryPage = () => {
                         }
                         aria-label="Imagine următoare"
                       >
-                        <ChevronRight size={18} />
+                        <ChevronRight size={20} />
                       </button>
                     </>
                   ) : null}
 
-                  <div className="absolute bottom-3 left-1/2 -translate-x-1/2 px-3 py-1.5 rounded-sm border border-border bg-background/60 font-body text-xs text-foreground">
-                    {lightboxIdx + 1} / {photos.length}
+                  <div className="pointer-events-none absolute inset-x-0 bottom-6">
+                    <div className="mx-auto w-fit max-w-full text-center">
+                      <div className="drop-shadow-[0_2px_16px_rgba(0,0,0,0.85)]">
+                        <div className="font-display text-white text-lg md:text-xl leading-tight">
+                          {entry.title}
+                        </div>
+                        {photos[lightboxIdx].alt ? (
+                          <div className="font-body text-xs md:text-sm text-white/80 mt-1">
+                            {photos[lightboxIdx].alt}
+                          </div>
+                        ) : null}
+                        <div className="font-body text-sm md:text-base mt-2 text-gold font-semibold">
+                          {lightboxIdx + 1}/{photos.length}
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </motion.div>
