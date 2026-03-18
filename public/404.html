@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirect...</title>
+    <meta name="robots" content="noindex" />
+    <script>
+      // GitHub Pages SPA fallback:
+      // Redirect unknown paths to /?p=<original-path>, then index.html restores it.
+      (function () {
+        var path = window.location.pathname;
+        var search = window.location.search || "";
+        var hash = window.location.hash || "";
+        var target = "/?p=" + encodeURIComponent(path) + (search ? "&" + search.slice(1) : "") + hash;
+        window.location.replace(target);
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>
+
