@@ -2,7 +2,7 @@
 title: Irina & Sergiu
 url_slug: irina-sergiu
 category: Nuntă
-image: /images/uploads/corneliuganu005-6.jpg
+image: /images/uploads/1400x900-6.jpg
 description: Cornel Iuganu Photography
 date: 2026-03-23T19:08:00
 featured: false

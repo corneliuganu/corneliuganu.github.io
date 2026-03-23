@@ -2,7 +2,7 @@
 title: Olesea & Alin
 url_slug: olesea-alin
 category: Nuntă
-image: /images/uploads/corneliuganu005-3.jpg
+image: /images/uploads/1400x900-3.jpg
 description: Cornel Iuganu Photography
 date: 2026-03-23T18:55:00
 featured: false

@@ -2,7 +2,7 @@
 title: Mirela & Dani
 url_slug: mirela-dani
 category: Nuntă
-image: /images/uploads/corneliuganu037-1.jpg
+image: /images/uploads/1400x900-7.jpg
 description: Cornel Iuganu Photography
 date: 2026-03-23T19:10:00
 featured: false

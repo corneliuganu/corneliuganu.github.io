@@ -2,7 +2,7 @@
 title: Gabi & Ionuț
 url_slug: gabi-ionut
 category: Nuntă
-image: /images/uploads/corneliuganu005-5.jpg
+image: /images/uploads/1400x900-5.jpg
 description: Cornel Iuganu Photography
 date: 2026-03-23T19:05:00
 featured: false
