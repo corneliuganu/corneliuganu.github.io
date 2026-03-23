@@ -1,6 +1,6 @@
 ---
 title: Eva & Dani
-url_slug: ''
+url_slug: eva-dani
 category: Nuntă
 image: /images/uploads/corneliuganu015-4.jpg
 description: Cornel Iuganu Photography

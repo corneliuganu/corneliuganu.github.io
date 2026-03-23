@@ -1,6 +1,6 @@
 ---
 title: Corina & Doru
-url_slug: ''
+url_slug: corina-doru
 category: Nuntă
 image: /images/uploads/corneliuganu017-2.jpg
 description: Cornel Iuganu Photography

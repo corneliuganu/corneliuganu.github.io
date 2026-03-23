@@ -1,5 +1,6 @@
 ---
 title: Andreea & Gabi
+url_slug: andreea-gabi
 category: Nuntă
 image: /images/uploads/1400x900-4.jpg
 description: Cornel Iuganu Photography

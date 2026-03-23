@@ -1,5 +1,6 @@
 ---
 title: Olesea & Alin
+url_slug: olesea-alin
 category: Nuntă
 image: /images/uploads/corneliuganu005-3.jpg
 description: Cornel Iuganu Photography

@@ -1,5 +1,6 @@
 ---
 title: Egipt
+url_slug: egipt-peisaje
 category: Peisaj
 image: /images/uploads/1400x900-1.jpg
 description: Cornel Iuganu Photography
