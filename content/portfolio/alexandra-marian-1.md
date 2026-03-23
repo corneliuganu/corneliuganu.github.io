@@ -1,0 +1,66 @@
+---
+title: Alexandra & Marian
+url_slug: ''
+category: Nuntă
+image: /images/uploads/corneliuganu-02-1.jpg
+description: Cornel Iuganu Photography
+date: 2026-03-23T22:55:00
+featured: false
+photos_bulk:
+  - /images/uploads/corneliuganu-01-1.jpg
+  - /images/uploads/corneliuganu-02-1.jpg
+  - /images/uploads/corneliuganu-03-1.jpg
+  - /images/uploads/corneliuganu-04.jpg
+  - /images/uploads/corneliuganu-05-1.jpg
+  - /images/uploads/corneliuganu-06-1.jpg
+  - /images/uploads/corneliuganu-07-1.jpg
+  - /images/uploads/corneliuganu-08-1.jpg
+  - /images/uploads/corneliuganu-09-1.jpg
+  - /images/uploads/corneliuganu-10-12.jpg
+  - /images/uploads/corneliuganu-11-9.jpg
+  - /images/uploads/corneliuganu-12-9.jpg
+  - /images/uploads/corneliuganu-13-9.jpg
+  - /images/uploads/corneliuganu-14-8.jpg
+  - /images/uploads/corneliuganu-15-8.jpg
+  - /images/uploads/corneliuganu-16-7.jpg
+  - /images/uploads/corneliuganu-17-7.jpg
+  - /images/uploads/corneliuganu-18-7.jpg
+  - /images/uploads/corneliuganu-19-6.jpg
+  - /images/uploads/corneliuganu-20-5.jpg
+  - /images/uploads/corneliuganu-21-6.jpg
+  - /images/uploads/corneliuganu-22-6.jpg
+  - /images/uploads/corneliuganu-23-5.jpg
+  - /images/uploads/corneliuganu-24-4.jpg
+  - /images/uploads/corneliuganu-25-5.jpg
+  - /images/uploads/corneliuganu-26-5.jpg
+  - /images/uploads/corneliuganu-27-5.jpg
+  - /images/uploads/corneliuganu-28-4.jpg
+  - /images/uploads/corneliuganu-29-4.jpg
+  - /images/uploads/corneliuganu-30-4.jpg
+  - /images/uploads/corneliuganu-31-4.jpg
+  - /images/uploads/corneliuganu-32-4.jpg
+  - /images/uploads/corneliuganu-33-4.jpg
+  - /images/uploads/corneliuganu-34-4.jpg
+  - /images/uploads/corneliuganu-35-4.jpg
+  - /images/uploads/corneliuganu-36-3.jpg
+  - /images/uploads/corneliuganu-37-3.jpg
+  - /images/uploads/corneliuganu-38-3.jpg
+  - /images/uploads/corneliuganu-39-3.jpg
+  - /images/uploads/corneliuganu-40-3.jpg
+  - /images/uploads/corneliuganu-41-3.jpg
+  - /images/uploads/corneliuganu-42-3.jpg
+  - /images/uploads/corneliuganu-43-3.jpg
+  - /images/uploads/corneliuganu-44-3.jpg
+  - /images/uploads/corneliuganu-45-3.jpg
+  - /images/uploads/corneliuganu-46-3.jpg
+  - /images/uploads/corneliuganu-47-2.jpg
+  - /images/uploads/corneliuganu-48-2.jpg
+  - /images/uploads/corneliuganu-49-2.jpg
+  - /images/uploads/corneliuganu-50-2.jpg
+  - /images/uploads/corneliuganu-51-2.jpg
+  - /images/uploads/corneliuganu-52-2.jpg
+  - /images/uploads/corneliuganu-53-2.jpg
+  - /images/uploads/corneliuganu-54-2.jpg
+  - /images/uploads/corneliuganu-55-2.jpg
+photos: []
+---
