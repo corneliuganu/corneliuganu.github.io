@@ -33,6 +33,7 @@ const imageModules = import.meta.glob("/src/assets/*.{jpg,jpeg,png}", {
   eager: true,
   import: "default",
 }) as Record<string, string>;
+const SITE_URL = "https://corneliuganu.github.io";
 
 function resolveImage(imagePath: string | undefined): string | undefined {
   if (!imagePath) return undefined;
@@ -41,6 +42,13 @@ function resolveImage(imagePath: string | undefined): string | undefined {
     key.endsWith(`/${filename}`)
   );
   return match ? match[1] : imagePath;
+}
+
+function toAbsoluteUrl(url: string | undefined): string | undefined {
+  if (!url) return undefined;
+  if (/^https?:\/\//i.test(url)) return url;
+  if (url.startsWith("/")) return `${SITE_URL}${url}`;
+  return `${SITE_URL}/${url}`;
 }
 
 // Home content
@@ -154,7 +162,7 @@ export function useSeoHome(): SeoHome {
         raw.schema_description || "Fotograf profesionist de evenimente",
       schemaCity: raw.schema_city || "București",
       canonical: raw.canonical || "https://corneliuganu.github.io",
-      ogImage: raw.og_image,
+      ogImage: toAbsoluteUrl(raw.og_image),
     };
   }, [files]);
 }
@@ -185,7 +193,7 @@ export function useSeoPortfolio(): SeoSimple {
       description:
         raw.description ||
         "Explorează portofoliul meu de fotografie de evenimente: nunți, botezuri, portrete și peisaje.",
-      ogImage: raw.og_image,
+      ogImage: toAbsoluteUrl(raw.og_image),
       canonical: raw.canonical || "https://corneliuganu.github.io/portofoliu",
     };
   }, [files]);
@@ -210,7 +218,7 @@ export function useSeoAbout(): SeoSimple {
       description:
         raw.description ||
         "Află povestea din spatele obiectivului. Cornel Iuganu — fotograf profesionist cu peste 12 ani de experiență.",
-      ogImage: raw.og_image,
+      ogImage: toAbsoluteUrl(raw.og_image),
       canonical: raw.canonical || "https://corneliuganu.github.io/despre",
     };
   }, [files]);
@@ -235,7 +243,7 @@ export function useSeoContact(): SeoSimple {
       description:
         raw.description ||
         "Contactează-mă pentru evenimentul tău. Cornel Iuganu — fotograf profesionist de evenimente.",
-      ogImage: raw.og_image,
+      ogImage: toAbsoluteUrl(raw.og_image),
       canonical: raw.canonical || "https://corneliuganu.github.io/contact",
     };
   }, [files]);
