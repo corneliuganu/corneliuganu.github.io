@@ -23,16 +23,26 @@ const Portfolio = () => {
     setLightboxIdx(null);
   }, [location.key]);
 
-  // Sync selected filter with query param (?categorie=...)
+  // Keep category in navigation state (clean URL), with fallback for old query links.
   useEffect(() => {
+    const fromState =
+      (location.state as { fromCategory?: string } | null)?.fromCategory ?? null;
     const fromUrl = new URLSearchParams(location.search).get("categorie");
     const allowed = new Set(["Toate", ...categories]);
+    if (fromState && allowed.has(fromState)) {
+      setActive(fromState);
+      return;
+    }
     if (fromUrl && allowed.has(fromUrl)) {
       setActive(fromUrl);
+      navigate(location.pathname, {
+        replace: true,
+        state: { fromCategory: fromUrl },
+      });
       return;
     }
     setActive("Toate");
-  }, [location.search, categories]);
+  }, [location.pathname, location.search, location.state, categories, navigate]);
 
   const filtered =
     active === "Toate"
@@ -112,13 +122,7 @@ const Portfolio = () => {
               {["Toate", ...categories].map((cat) => (
                 <button
                   key={cat}
-                  onClick={() => {
-                    const search =
-                      cat === "Toate"
-                        ? ""
-                        : `?categorie=${encodeURIComponent(cat)}`;
-                    navigate(`/portofoliu${search}`);
-                  }}
+                  onClick={() => setActive(cat)}
                   className={`px-5 py-2 rounded-sm text-xs tracking-widest uppercase font-body transition-all duration-300 ${
                     active === cat
                       ? "gradient-gold text-background"
@@ -136,11 +140,10 @@ const Portfolio = () => {
                 {filtered.map((event) => (
                   <Link
                     key={event.slug}
-                    to={`/portofoliu/${event.slug}${
-                      active !== "Toate"
-                        ? `?categorie=${encodeURIComponent(active)}`
-                        : ""
-                    }`}
+                    to={`/portofoliu/${event.slug}`}
+                    state={{
+                      fromCategory: active !== "Toate" ? active : undefined,
+                    }}
                   >
                     <motion.div
                       layout
