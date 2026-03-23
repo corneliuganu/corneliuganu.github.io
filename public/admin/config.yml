@@ -106,6 +106,7 @@ collections:
         file: "content/settings/contact.json"
         fields:
           - { label: "Email", name: "email", widget: "string" }
+          - { label: "Email destinație (intern)", name: "recipient_email", widget: "string", required: false, hint: "Adresa reală unde ajung mesajele (ex: yug_data@yahoo.com). Poți afișa alt email public." }
           - { label: "Telefon", name: "phone", widget: "string" }
           - { label: "Locație", name: "location", widget: "string" }
 

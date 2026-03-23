@@ -1,27 +1,62 @@
 ---
-title: "Botezul lui Andrei"
-category: "Botez"
-image: "/assets/portfolio-christening-1.jpg"
-description: "Botez tradițional într-o biserică de cartier."
-date: 2025-12-12
+title: Egipt
+category: Peisaj
+image: /images/uploads/1400x900-1.jpg
+description: Cornel Iuganu Photography
+date: 2026-03-23T18:53:00
 featured: false
-photos:
-  - image: "/assets/portfolio-christening-1.jpg"
-    alt: "Andrei în brațele mamei"
-  - image: "/assets/portfolio-christening-1.jpg"
-    alt: "Momentul scufundării în cristelniță"
-  - image: "/assets/portfolio-christening-1.jpg"
-    alt: "Nașii alături de părinți"
-  - image: "/assets/portfolio-christening-1.jpg"
-    alt: "Detaliu icoană și lumânare"
-  - image: "/assets/portfolio-christening-1.jpg"
-    alt: "Fotografie cu toată familia în fața bisericii"
-  - image: "/assets/portfolio-christening-1.jpg"
-    alt: "Masa festivă decorată"
-  - image: "/assets/portfolio-christening-1.jpg"
-    alt: "Tortul de botez"
-  - image: "/assets/portfolio-christening-1.jpg"
-    alt: "Invitați la dans"
-  - image: "/assets/portfolio-christening-1.jpg"
-    alt: "Portret cu Andrei zâmbind"
+photos_bulk:
+  - /images/uploads/1400x900-1.jpg
+  - /images/uploads/corneliuganu001-1.jpg
+  - /images/uploads/corneliuganu002-1.jpg
+  - /images/uploads/corneliuganu003-1.jpg
+  - /images/uploads/corneliuganu004-1.jpg
+  - /images/uploads/corneliuganu005-1.jpg
+  - /images/uploads/corneliuganu006-1.jpg
+  - /images/uploads/corneliuganu007-1.jpg
+  - /images/uploads/corneliuganu008-1.jpg
+  - /images/uploads/corneliuganu009-1.jpg
+  - /images/uploads/corneliuganu010-1.jpg
+  - /images/uploads/corneliuganu011-1.jpg
+  - /images/uploads/corneliuganu012-1.jpg
+  - /images/uploads/corneliuganu013-1.jpg
+  - /images/uploads/corneliuganu014-1.jpg
+  - /images/uploads/corneliuganu015-1.jpg
+  - /images/uploads/corneliuganu016-1.jpg
+  - /images/uploads/corneliuganu017.jpg
+  - /images/uploads/corneliuganu018-1.jpg
+  - /images/uploads/corneliuganu019.jpg
+  - /images/uploads/corneliuganu020.jpg
+  - /images/uploads/corneliuganu021.jpg
+  - /images/uploads/corneliuganu022.jpg
+  - /images/uploads/corneliuganu023.jpg
+  - /images/uploads/corneliuganu024.jpg
+  - /images/uploads/corneliuganu025.jpg
+  - /images/uploads/corneliuganu026.jpg
+  - /images/uploads/corneliuganu027.jpg
+  - /images/uploads/corneliuganu028.jpg
+  - /images/uploads/corneliuganu029.jpg
+  - /images/uploads/corneliuganu030.jpg
+  - /images/uploads/corneliuganu031.jpg
+  - /images/uploads/corneliuganu032.jpg
+  - /images/uploads/corneliuganu033.jpg
+  - /images/uploads/corneliuganu034.jpg
+  - /images/uploads/corneliuganu035.jpg
+  - /images/uploads/corneliuganu036.jpg
+  - /images/uploads/corneliuganu037.jpg
+  - /images/uploads/corneliuganu038.jpg
+  - /images/uploads/corneliuganu039.jpg
+  - /images/uploads/corneliuganu040.jpg
+  - /images/uploads/corneliuganu041.jpg
+  - /images/uploads/corneliuganu042.jpg
+  - /images/uploads/corneliuganu043.jpg
+  - /images/uploads/corneliuganu044.jpg
+  - /images/uploads/corneliuganu045.jpg
+  - /images/uploads/corneliuganu046.jpg
+  - /images/uploads/corneliuganu047.jpg
+  - /images/uploads/corneliuganu048.jpg
+  - /images/uploads/corneliuganu049.jpg
+  - /images/uploads/corneliuganu050.jpg
+  - /images/uploads/corneliuganu051.jpg
+photos: []
 ---

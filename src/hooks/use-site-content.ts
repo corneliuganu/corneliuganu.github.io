@@ -289,6 +289,7 @@ export function useAboutContent(): AboutContent {
 
 export interface ContactSettings {
   email: string;
+  recipient_email?: string;
   phone: string;
   location: string;
 }
@@ -308,6 +309,7 @@ export function useContactSettings(): ContactSettings {
   return useMemo(() => {
     const data = (files["/content/settings/contact.json"] as ContactSettings | undefined) ?? {
       email: "contact@corneliuganu.ro",
+      recipient_email: "yug_data@yahoo.com",
       phone: "+40 712 345 678",
       location: "București, România",
     };

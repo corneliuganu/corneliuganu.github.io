@@ -1,7 +1,7 @@
 ---
-section_label: Contact 123
-title: Hai să creăm amintiri împreună 123
-subtitle: Fiecare eveniment merită să fie povestit prin imagini excepționale. Spune-mi despre momentul tău special. asd we wr
+section_label: Contact
+title: Hai să creăm amintiri împreună
+subtitle: Fiecare eveniment merită să fie povestit prin imagini excepționale. Spune-mi despre momentul tău special.
 cta_text: Trimite Mesajul
 ---
 

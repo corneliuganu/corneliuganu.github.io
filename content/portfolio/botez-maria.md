@@ -1,27 +1,20 @@
 ---
-title: "Botezul Mariei"
-category: "Botez"
-image: "/assets/portfolio-christening-1.jpg"
-description: "Botez luminos într-o biserică spațioasă."
-date: 2025-10-10
+title: Olesea & Alin
+category: Nuntă
+image: /images/uploads/corneliuganu005-3.jpg
+description: Cornel Iuganu Photography
+date: 2026-03-23T18:55:00
 featured: false
-photos:
-  - image: "/assets/portfolio-christening-1.jpg"
-    alt: "Maria în rochiță albă"
-  - image: "/assets/portfolio-christening-1.jpg"
-    alt: "Părinții și nașii lângă cristelniță"
-  - image: "/assets/portfolio-christening-1.jpg"
-    alt: "Detaliu cu flori și icoană"
-  - image: "/assets/portfolio-christening-1.jpg"
-    alt: "Portret cu bunicii"
-  - image: "/assets/portfolio-christening-1.jpg"
-    alt: "Masa festivă pregătită pentru invitați"
-  - image: "/assets/portfolio-christening-1.jpg"
-    alt: "Momentul tăierii tortului"
-  - image: "/assets/portfolio-christening-1.jpg"
-    alt: "Invitați dansând pe ring"
-  - image: "/assets/portfolio-christening-1.jpg"
-    alt: "Detaliu decor roz"
-  - image: "/assets/portfolio-christening-1.jpg"
-    alt: "Portret de familie la finalul zilei"
+photos_bulk:
+  - /images/uploads/1400x900-3.jpg
+  - /images/uploads/corneliuganu001-3.jpg
+  - /images/uploads/corneliuganu002-3.jpg
+  - /images/uploads/corneliuganu003-2.jpg
+  - /images/uploads/corneliuganu004-3.jpg
+  - /images/uploads/corneliuganu005-3.jpg
+  - /images/uploads/corneliuganu006-3.jpg
+  - /images/uploads/corneliuganu007-2.jpg
+  - /images/uploads/corneliuganu008-2.jpg
+  - /images/uploads/corneliuganu009-2.jpg
+photos: []
 ---

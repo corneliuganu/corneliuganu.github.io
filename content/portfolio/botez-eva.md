@@ -1,27 +1,23 @@
 ---
-title: "Botezul Evei"
-category: "Botez"
-image: "/assets/portfolio-christening-1.jpg"
-description: "Botez de vară într-un restaurant cu grădină."
-date: 2025-08-01
+title: Gabi & Ionuț
+category: Nuntă
+image: /images/uploads/corneliuganu005-5.jpg
+description: Cornel Iuganu Photography
+date: 2026-03-23T19:05:00
 featured: false
-photos:
-  - image: "/assets/portfolio-christening-1.jpg"
-    alt: "Eva în brațele nașilor în grădină"
-  - image: "/assets/portfolio-christening-1.jpg"
-    alt: "Ceremonia în biserică"
-  - image: "/assets/portfolio-christening-1.jpg"
-    alt: "Detaliu décor floral exterior"
-  - image: "/assets/portfolio-christening-1.jpg"
-    alt: "Copii jucându-se pe iarbă"
-  - image: "/assets/portfolio-christening-1.jpg"
-    alt: "Masa festivă în aer liber"
-  - image: "/assets/portfolio-christening-1.jpg"
-    alt: "Tortul tematic al Evei"
-  - image: "/assets/portfolio-christening-1.jpg"
-    alt: "Invitați dansând"
-  - image: "/assets/portfolio-christening-1.jpg"
-    alt: "Portret cu bunicii"
-  - image: "/assets/portfolio-christening-1.jpg"
-    alt: "Fotografie de grup în grădină"
+photos_bulk:
+  - /images/uploads/1400x900-5.jpg
+  - /images/uploads/corneliuganu001-5.jpg
+  - /images/uploads/corneliuganu002-4.jpg
+  - /images/uploads/corneliuganu003-4.jpg
+  - /images/uploads/corneliuganu005-5.jpg
+  - /images/uploads/corneliuganu006-5.jpg
+  - /images/uploads/corneliuganu007-4.jpg
+  - /images/uploads/corneliuganu008-4.jpg
+  - /images/uploads/corneliuganu009-4.jpg
+  - /images/uploads/corneliuganu010-3.jpg
+  - /images/uploads/corneliuganu011-3.jpg
+  - /images/uploads/corneliuganu012-3.jpg
+  - /images/uploads/corneliuganu013-3.jpg
+photos: []
 ---

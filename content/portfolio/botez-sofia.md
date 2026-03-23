@@ -1,15 +1,29 @@
 ---
-title: Botez Sofia
-category: Botez
-image: /assets/portfolio-christening-1.jpg
-description: Botezul micuței Sofia
-date: 2026-03-08
+title: Corsica
+category: Peisaj
+image: /images/uploads/corneliuganu016.jpg
+description: Bonifaccio
+date: 2026-03-23T18:53:00
 featured: true
 photos_bulk:
-  - /images/uploads/Cornel aI Restore Portret B leumarin.png
-  - /images/uploads/Cornel aI Restore Portret.png
-  - /images/uploads/Afis Origini.png
-  - /images/uploads/about-photographer-D7yOXgQm.jpg
+  - /images/uploads/1400x900.jpg
+  - /images/uploads/corneliuganu001.jpg
+  - /images/uploads/corneliuganu002.jpg
+  - /images/uploads/corneliuganu003.jpg
+  - /images/uploads/corneliuganu004.jpg
+  - /images/uploads/corneliuganu005.jpg
+  - /images/uploads/corneliuganu006.jpg
+  - /images/uploads/corneliuganu007.jpg
+  - /images/uploads/corneliuganu008.jpg
+  - /images/uploads/corneliuganu009.jpg
+  - /images/uploads/corneliuganu010.jpg
+  - /images/uploads/corneliuganu011.jpg
+  - /images/uploads/corneliuganu012.jpg
+  - /images/uploads/corneliuganu013.jpg
+  - /images/uploads/corneliuganu014.jpg
+  - /images/uploads/corneliuganu015.jpg
+  - /images/uploads/corneliuganu016.jpg
+  - /images/uploads/corneliuganu018.jpg
 photos: []
 ---
 

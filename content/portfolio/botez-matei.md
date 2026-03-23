@@ -1,27 +1,16 @@
 ---
-title: "Botezul lui Matei"
-category: "Botez"
-image: "/assets/portfolio-christening-1.jpg"
-description: "Botez intim cu familie și prieteni apropiați."
-date: 2025-11-02
+title: Egipt
+category: Portret
+image: /images/uploads/1400x900-2.jpg
+description: Cornel Iuganu Photography
+date: 2026-03-23T18:53:00
 featured: false
-photos:
-  - image: "/assets/portfolio-christening-1.jpg"
-    alt: "Matei adormit în brațele nașei"
-  - image: "/assets/portfolio-christening-1.jpg"
-    alt: "Detaliu lumânare personalizată"
-  - image: "/assets/portfolio-christening-1.jpg"
-    alt: "Momentul mirungerii"
-  - image: "/assets/portfolio-christening-1.jpg"
-    alt: "Portret cu bunicii"
-  - image: "/assets/portfolio-christening-1.jpg"
-    alt: "Masa festivă decorată în culori pastel"
-  - image: "/assets/portfolio-christening-1.jpg"
-    alt: "Nașii tăind tortul"
-  - image: "/assets/portfolio-christening-1.jpg"
-    alt: "Invitați dansând"
-  - image: "/assets/portfolio-christening-1.jpg"
-    alt: "Detaliu de pe candy bar"
-  - image: "/assets/portfolio-christening-1.jpg"
-    alt: "Fotografie de grup cu toți invitații"
+photos_bulk:
+  - /images/uploads/1400x900-2.jpg
+  - /images/uploads/corneliuganu001-2.jpg
+  - /images/uploads/corneliuganu002-2.jpg
+  - /images/uploads/corneliuganu004-2.jpg
+  - /images/uploads/corneliuganu005-2.jpg
+  - /images/uploads/corneliuganu006-2.jpg
+photos: []
 ---

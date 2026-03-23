@@ -5,6 +5,13 @@ import { useHomeContent } from "@/hooks/use-site-content";
 
 const HeroSection = () => {
   const home = useHomeContent();
+  const [firstPart, lastPart] = (() => {
+    const title = (home.heroTitle || "").trim();
+    if (!title) return ["", ""];
+    const parts = title.split(/\s+/);
+    if (parts.length < 2) return [title, ""];
+    return [parts.slice(0, -1).join(" "), parts[parts.length - 1]];
+  })();
 
   return (
     <section className="relative min-h-screen flex items-end md:items-center overflow-hidden">
@@ -40,7 +47,13 @@ const HeroSection = () => {
           </motion.div>
 
           <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-6 text-foreground">
-            {home.heroTitle}
+            {firstPart}
+            {lastPart ? (
+              <>
+                {" "}
+                <span className="text-gold">{lastPart}</span>
+              </>
+            ) : null}
           </h1>
 
           <motion.p

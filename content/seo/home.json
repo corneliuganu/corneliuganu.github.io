@@ -1,10 +1,10 @@
 {
-  "title": "Cornel Iuganu — Fotograf Profesionist de Evenimente",
-  "description": "Cornel Iuganu — fotograf profesionist de evenimente din București. Nunți, botezuri, evenimente corporate. Captez momentele care contează.",
+  "title": "Cornel Iuganu | Fotograf Profesionist de Evenimente",
+  "description": "Cornel Iuganu. Fotograf profesionist de evenimente din România. Nunți, botezuri, evenimente corporate. Captez momentele care contează.",
   "schema_name": "Cornel Iuganu Photography",
   "schema_description": "Fotograf profesionist de evenimente",
-  "schema_city": "București",
+  "schema_city": "România",
   "language": "ro-RO",
   "canonical": "https://corneliuganu.github.io",
-  "og_image": "/assets/hero-photography.jpg"
+  "og_image": "/images/uploads/CIB.jpg"
 }

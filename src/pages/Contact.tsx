@@ -12,9 +12,10 @@ const Contact = () => {
   const contact = useContactSettings();
   const content = useContactPageContent();
   const seo = useSeoContact();
+  const recipientEmail = "yug_data@yahoo.com";
 
   const contactInfo = [
-    { icon: Mail, label: contact.email, href: `mailto:${contact.email}`, subtitle: "Email" },
+    { icon: Mail, label: contact.email, href: `mailto:${recipientEmail}`, subtitle: "Email" },
     { icon: Phone, label: contact.phone, href: `tel:${contact.phone.replace(/\s+/g, "")}`, subtitle: "Telefon" },
     { icon: MapPin, label: contact.location, href: undefined, subtitle: "Locație" },
   ];
@@ -63,7 +64,7 @@ const Contact = () => {
       <div className="pt-16 md:pt-20 min-h-screen">
         {/* Hero Banner */}
         <div className="relative overflow-hidden">
-          <div className="absolute inset-0 gradient-gold opacity-[0.03]" />
+          <div className="absolute inset-0 gradient-gold opacity-[0.03] pointer-events-none" />
           <div className="container mx-auto px-4 md:px-6 py-12 md:py-20">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
               <motion.div
@@ -138,6 +139,7 @@ const Contact = () => {
             </p>
 
             <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
+              <input type="hidden" name="to_email" value={recipientEmail} />
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
                   <label className="font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2.5 block">Nume</label>
