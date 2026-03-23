@@ -32,8 +32,8 @@ collections:
       - { label: "Link final (slug URL)", name: "url_slug", widget: "string", required: false, hint: "Ex: irina-sergiu. Dacă e gol, se folosește automat numele fișierului." }
       - { label: "Categorie", name: "category", widget: "select", options: ["Nuntă", "Botez", "Portret", "Peisaj"] }
       - { label: "Imagine", name: "image", widget: "image" }
-      - { label: "Descriere", name: "description", widget: "text", required: false }
-      - { label: "Data", name: "date", widget: "datetime" }
+      - { label: "Descriere", name: "description", widget: "text", required: false, default: "Cornel Iuganu Photography" }
+      - { label: "Data", name: "date", widget: "datetime", default: "{{now}}" }
       - { label: "Featured", name: "featured", widget: "boolean", default: false }
       - label: "Upload fotografii (bulk)"
         name: "photos_bulk"
