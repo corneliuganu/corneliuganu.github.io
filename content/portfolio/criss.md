@@ -1,0 +1,62 @@
+---
+title: Criss
+url_slug: ''
+category: Portret
+image: /images/uploads/corneliuganu00028-2.jpg
+description: Cornel Iuganu Photography
+date: 2026-03-23T23:09:00
+featured: false
+photos_bulk:
+  - /images/uploads/corneliuganu00000-2.jpg
+  - /images/uploads/corneliuganu00001-2.jpg
+  - /images/uploads/corneliuganu00002-3.jpg
+  - /images/uploads/corneliuganu00003-3.jpg
+  - /images/uploads/corneliuganu00004-3.jpg
+  - /images/uploads/corneliuganu00005-2.jpg
+  - /images/uploads/corneliuganu00007-3.jpg
+  - /images/uploads/corneliuganu00009-3.jpg
+  - /images/uploads/corneliuganu00010-3.jpg
+  - /images/uploads/corneliuganu00011-2.jpg
+  - /images/uploads/corneliuganu00012-3.jpg
+  - /images/uploads/corneliuganu00013-3.jpg
+  - /images/uploads/corneliuganu00016-3.jpg
+  - /images/uploads/corneliuganu00017-3.jpg
+  - /images/uploads/corneliuganu00018-2.jpg
+  - /images/uploads/corneliuganu00019-3.jpg
+  - /images/uploads/corneliuganu00020-3.jpg
+  - /images/uploads/corneliuganu00021-3.jpg
+  - /images/uploads/corneliuganu00022-3.jpg
+  - /images/uploads/corneliuganu00023-1.jpg
+  - /images/uploads/corneliuganu00025-2.jpg
+  - /images/uploads/corneliuganu00026-2.jpg
+  - /images/uploads/corneliuganu00027-2.jpg
+  - /images/uploads/corneliuganu00028-2.jpg
+  - /images/uploads/corneliuganu00029-2.jpg
+  - /images/uploads/corneliuganu00030-2.jpg
+  - /images/uploads/corneliuganu00031-1.jpg
+  - /images/uploads/corneliuganu00032-1.jpg
+  - /images/uploads/corneliuganu00033-1.jpg
+  - /images/uploads/corneliuganu00034-1.jpg
+  - /images/uploads/corneliuganu00035-1.jpg
+  - /images/uploads/corneliuganu00036-1.jpg
+  - /images/uploads/corneliuganu00037.jpg
+  - /images/uploads/corneliuganu00038.jpg
+  - /images/uploads/corneliuganu00039.jpg
+  - /images/uploads/corneliuganu00040.jpg
+  - /images/uploads/corneliuganu00041.jpg
+  - /images/uploads/corneliuganu00042.jpg
+  - /images/uploads/corneliuganu00043.jpg
+  - /images/uploads/corneliuganu00044.jpg
+  - /images/uploads/corneliuganu00045.jpg
+  - /images/uploads/corneliuganu00046.jpg
+  - /images/uploads/corneliuganu00048.jpg
+  - /images/uploads/corneliuganu00049.jpg
+  - /images/uploads/corneliuganu00050.jpg
+  - /images/uploads/corneliuganu00051.jpg
+  - /images/uploads/corneliuganu00052.jpg
+  - /images/uploads/corneliuganu00054.jpg
+  - /images/uploads/corneliuganu00055.jpg
+  - /images/uploads/corneliuganu00056.jpg
+  - /images/uploads/corneliuganu00057.jpg
+photos: []
+---
