@@ -20,7 +20,7 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
-          <Link to="/" className="font-display text-xl md:text-2xl font-bold tracking-wider text-foreground">
+          <Link to="/" className="font-display text-[1.375rem] md:text-2xl font-bold tracking-wider text-foreground">
             Cornel <span className="text-gold">Iuganu</span>
           </Link>
 

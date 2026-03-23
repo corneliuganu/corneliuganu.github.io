@@ -98,8 +98,8 @@ const Index = () => {
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent flex items-end p-6">
-                    <span className="font-body text-base tracking-widest uppercase text-gold">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex items-end p-6">
+                    <span className="font-body text-base tracking-widest uppercase text-white dark:text-gold">
                       {{"Nunți": "Nuntă", "Botezuri": "Botez", "Corporate": "Portret", "Festivaluri": "Peisaj"}[work.category] || work.category}
                     </span>
                   </div>

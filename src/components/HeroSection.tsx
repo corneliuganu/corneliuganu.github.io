@@ -23,7 +23,7 @@ const HeroSection = () => {
           className="w-full h-full object-cover"
           loading="eager"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-background/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/35 to-black/10 dark:from-background dark:via-background/40 dark:to-background/20" />
       </div>
 
       {/* Content */}
@@ -46,7 +46,7 @@ const HeroSection = () => {
             </span>
           </motion.div>
 
-          <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-6 text-foreground">
+          <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-6 text-white">
             {firstPart}
             {lastPart ? (
               <>
@@ -79,7 +79,7 @@ const HeroSection = () => {
             </Link>
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center px-8 py-3.5 border border-border text-foreground font-body text-sm tracking-widest uppercase rounded-sm hover:border-gold hover:text-gold transition-colors"
+              className="inline-flex items-center justify-center px-8 py-3.5 border border-white/70 text-white font-body text-sm tracking-widest uppercase rounded-sm hover:border-gold hover:text-gold transition-colors"
             >
               {home.heroCtaSecondary}
             </Link>

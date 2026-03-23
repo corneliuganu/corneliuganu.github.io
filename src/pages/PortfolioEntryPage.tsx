@@ -42,6 +42,7 @@ const PortfolioEntryPage = () => {
   const backTo = fromCategory
     ? `/portofoliu?categorie=${encodeURIComponent(fromCategory)}`
     : "/portofoliu";
+  const backLabel = fromCategory ? `Înapoi la ${fromCategory}` : "Înapoi la Portofoliu";
 
   const [lightboxIdx, setLightboxIdx] = useState<number | null>(null);
 
@@ -103,7 +104,7 @@ const PortfolioEntryPage = () => {
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-sm border border-gold text-gold hover:bg-gold hover:text-background transition-all font-body text-sm font-medium tracking-wider mb-6"
             >
               <ArrowLeft size={18} />
-              Înapoi la Portofoliu
+              {backLabel}
             </Link>
             <div className="text-center">
               <span className="font-body text-xs tracking-widest uppercase text-gold">

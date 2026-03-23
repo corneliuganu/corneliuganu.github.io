@@ -156,19 +156,14 @@ const Portfolio = () => {
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         loading="lazy"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/30 to-transparent flex items-end p-6">
-                        <div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex items-end p-6">
+                        <div className="text-left">
                           <span className="font-body text-sm tracking-widest uppercase text-gold mb-0.5 block">
                             {event.category}
                           </span>
-                          <p className="font-display text-xl font-semibold text-foreground leading-tight">
+                          <p className="font-display text-xl font-semibold text-white leading-tight">
                             {event.title}
                           </p>
-                          {event.photos.length > 0 && (
-                            <p className="font-body text-sm text-muted-foreground mt-1">
-                              {event.photos.length} fotografii
-                            </p>
-                          )}
                         </div>
                       </div>
                     </motion.div>
