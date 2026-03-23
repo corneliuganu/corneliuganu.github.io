@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Local project memory (do not commit)
+PROJECT_NOTES.local.md
