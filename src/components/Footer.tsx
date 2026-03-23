@@ -6,7 +6,8 @@ const Footer = () => {
   const contact = useContactSettings();
   const social = useSocialSettings();
   const footer = useFooterContent();
-  const recipientEmail = "yug_data@yahoo.com";
+  const recipientEmail = contact.recipient_email?.trim() || "yug_data@yahoo.com";
+  const emailLink = contact.email_link?.trim() || `mailto:${recipientEmail}`;
 
   return (
     <footer className="bg-card border-t border-border">
@@ -47,7 +48,7 @@ const Footer = () => {
           <div>
             <h4 className="font-display text-lg font-semibold mb-4 text-foreground">Contact</h4>
             <div className="flex flex-col gap-3 text-sm text-muted-foreground font-body">
-              <a href={`mailto:${recipientEmail}`} className="flex items-center gap-2 hover:text-gold transition-colors">
+              <a href={emailLink} className="flex items-center gap-2 hover:text-gold transition-colors">
                 <Mail size={16} />
                 {contact.email}
               </a>

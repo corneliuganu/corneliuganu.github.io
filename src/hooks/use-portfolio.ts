@@ -43,11 +43,26 @@ function parseFrontmatter(raw: string): Record<string, unknown> {
   return YAML.parse(match[1]) ?? {};
 }
 
+function slugify(input: string): string {
+  return input
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
 function parsePortfolioEntries(): PortfolioEntry[] {
   return Object.entries(portfolioFiles).map(([filepath, raw]) => {
     const text = raw as string;
     const data = parseFrontmatter(text);
-    const slug = filepath.split("/").pop()?.replace(".md", "") || "";
+    const fileSlug = filepath.split("/").pop()?.replace(".md", "") || "";
+    const customSlugRaw =
+      (data.url_slug as string | undefined) ||
+      (data.slug as string | undefined) ||
+      "";
+    const customSlug = slugify(customSlugRaw.trim());
+    const slug = customSlug || fileSlug;
 
     const explicitPhotos: PortfolioPhoto[] = Array.isArray(data.photos)
       ? (data.photos as { image?: string; alt?: unknown }[]).map((p) => ({

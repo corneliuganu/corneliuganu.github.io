@@ -1,5 +1,6 @@
 ---
 title: Irina & Sergiu
+url_slug: https://corneliuganu.github.io/portofoliu/irina-sergiu
 category: Nuntă
 image: /images/uploads/corneliuganu005-6.jpg
 description: Cornel Iuganu Photography

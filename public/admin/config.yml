@@ -29,6 +29,7 @@ collections:
         pattern: "Peisaj"
     fields:
       - { label: "Titlu", name: "title", widget: "string" }
+      - { label: "Link final (slug URL)", name: "url_slug", widget: "string", required: false, hint: "Ex: irina-sergiu. Dacă e gol, se folosește automat numele fișierului." }
       - { label: "Categorie", name: "category", widget: "select", options: ["Nuntă", "Botez", "Portret", "Peisaj"] }
       - { label: "Imagine", name: "image", widget: "image" }
       - { label: "Descriere", name: "description", widget: "text", required: false }
@@ -107,6 +108,7 @@ collections:
         fields:
           - { label: "Email", name: "email", widget: "string" }
           - { label: "Email destinație (intern)", name: "recipient_email", widget: "string", required: false, hint: "Adresa reală unde ajung mesajele (ex: yug_data@yahoo.com). Poți afișa alt email public." }
+          - { label: "Link final Email", name: "email_link", widget: "string", required: false, hint: "Linkul deschis la click pe cardul de email. Exemplu: mailto:yug_data@yahoo.com" }
           - { label: "Telefon", name: "phone", widget: "string" }
           - { label: "Locație", name: "location", widget: "string" }
 

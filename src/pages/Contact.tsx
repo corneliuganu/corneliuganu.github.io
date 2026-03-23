@@ -12,10 +12,11 @@ const Contact = () => {
   const contact = useContactSettings();
   const content = useContactPageContent();
   const seo = useSeoContact();
-  const recipientEmail = "yug_data@yahoo.com";
+  const recipientEmail = contact.recipient_email?.trim() || "yug_data@yahoo.com";
+  const emailLink = contact.email_link?.trim() || `mailto:${recipientEmail}`;
 
   const contactInfo = [
-    { icon: Mail, label: contact.email, href: `mailto:${recipientEmail}`, subtitle: "Email" },
+    { icon: Mail, label: contact.email, href: emailLink, subtitle: "Email" },
     { icon: Phone, label: contact.phone, href: `tel:${contact.phone.replace(/\s+/g, "")}`, subtitle: "Telefon" },
     { icon: MapPin, label: contact.location, href: undefined, subtitle: "Locație" },
   ];
