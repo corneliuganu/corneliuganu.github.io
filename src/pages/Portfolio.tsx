@@ -46,13 +46,8 @@ const Portfolio = () => {
 
   const filtered =
     active === "Toate"
-      ? categories.flatMap((cat) =>
-          [...entries]
-            .filter((e) => e.category === cat)
-            .sort(
-              (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-            )
-            .slice(0, cat === "Nuntă" ? 3 : 2)
+      ? [...entries].sort(
+          (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
         )
       : entries
           .filter((e) => e.category === active)
