@@ -1,6 +1,6 @@
 ---
 title: Corsica
-url_slug: corsicsa-bonifaccio
+url_slug: corsica-bonifaccio
 category: Peisaj
 image: /images/uploads/corneliuganu016.jpg
 description: Bonifaccio

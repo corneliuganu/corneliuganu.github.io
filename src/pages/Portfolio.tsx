@@ -1,7 +1,7 @@
 import { useState, useCallback, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Helmet } from "react-helmet-async";
-import { useLocation, Link } from "react-router-dom";
+import { useLocation, Link, useNavigate } from "react-router-dom";
 import { ChevronLeft, ChevronRight, X, ArrowLeft } from "lucide-react";
 import { usePortfolioPageContent, usePortfolioFilters, useSeoPortfolio } from "@/hooks/use-site-content";
 import { usePortfolio, PortfolioEntry } from "@/hooks/use-portfolio";
@@ -14,6 +14,7 @@ const Portfolio = () => {
   const [openEvent, setOpenEvent] = useState<PortfolioEntry | null>(null);
   const [lightboxIdx, setLightboxIdx] = useState<number | null>(null);
   const location = useLocation();
+  const navigate = useNavigate();
   const seo = useSeoPortfolio();
 
   // Reset gallery when navigating to /portofoliu (e.g. clicking nav link)
@@ -21,6 +22,17 @@ const Portfolio = () => {
     setOpenEvent(null);
     setLightboxIdx(null);
   }, [location.key]);
+
+  // Sync selected filter with query param (?categorie=...)
+  useEffect(() => {
+    const fromUrl = new URLSearchParams(location.search).get("categorie");
+    const allowed = new Set(["Toate", ...categories]);
+    if (fromUrl && allowed.has(fromUrl)) {
+      setActive(fromUrl);
+      return;
+    }
+    setActive("Toate");
+  }, [location.search, categories]);
 
   const filtered =
     active === "Toate"
@@ -100,7 +112,13 @@ const Portfolio = () => {
               {["Toate", ...categories].map((cat) => (
                 <button
                   key={cat}
-                  onClick={() => setActive(cat)}
+                  onClick={() => {
+                    const search =
+                      cat === "Toate"
+                        ? ""
+                        : `?categorie=${encodeURIComponent(cat)}`;
+                    navigate(`/portofoliu${search}`);
+                  }}
                   className={`px-5 py-2 rounded-sm text-xs tracking-widest uppercase font-body transition-all duration-300 ${
                     active === cat
                       ? "gradient-gold text-background"
@@ -116,7 +134,14 @@ const Portfolio = () => {
             <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               <AnimatePresence mode="popLayout">
                 {filtered.map((event) => (
-                  <Link key={event.slug} to={`/portofoliu/${event.slug}`}>
+                  <Link
+                    key={event.slug}
+                    to={`/portofoliu/${event.slug}${
+                      active !== "Toate"
+                        ? `?categorie=${encodeURIComponent(active)}`
+                        : ""
+                    }`}
+                  >
                     <motion.div
                       layout
                       initial={{ opacity: 0, scale: 0.9 }}

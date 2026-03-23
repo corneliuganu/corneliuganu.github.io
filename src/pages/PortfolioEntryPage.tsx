@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, ChevronLeft, ChevronRight, X } from "lucide-react";
@@ -7,6 +7,7 @@ import { usePortfolio } from "@/hooks/use-portfolio";
 
 const PortfolioEntryPage = () => {
   const { slug } = useParams<{ slug: string }>();
+  const location = useLocation();
   const { entries } = usePortfolio();
 
   const entry = useMemo(
@@ -37,6 +38,10 @@ const PortfolioEntryPage = () => {
     ? entry.photos
     : [{ src: entry.image, alt: entry.title }];
   const entryCanonical = `https://corneliuganu.github.io/portofoliu/${entry.slug}`;
+  const fromCategory = new URLSearchParams(location.search).get("categorie");
+  const backTo = fromCategory
+    ? `/portofoliu?categorie=${encodeURIComponent(fromCategory)}`
+    : "/portofoliu";
 
   const [lightboxIdx, setLightboxIdx] = useState<number | null>(null);
 
@@ -94,7 +99,7 @@ const PortfolioEntryPage = () => {
         <div className="container mx-auto px-4 py-8 md:py-12 pb-24 md:pb-32">
           <div className="mb-8">
             <Link
-              to="/portofoliu"
+              to={backTo}
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-sm border border-gold text-gold hover:bg-gold hover:text-background transition-all font-body text-sm font-medium tracking-wider mb-6"
             >
               <ArrowLeft size={18} />
