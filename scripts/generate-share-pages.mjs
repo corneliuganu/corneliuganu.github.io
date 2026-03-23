@@ -9,6 +9,7 @@ const __dirname = path.dirname(__filename);
 const BASE_URL = "https://corneliuganu.github.io";
 const PORTFOLIO_DIR = path.join(__dirname, "..", "content", "portfolio");
 const OUTPUT_DIR = path.join(__dirname, "..", "public", "portofoliu");
+const SEO_DIR = path.join(__dirname, "..", "content", "seo");
 
 function slugify(input) {
   return String(input || "")
@@ -73,6 +74,16 @@ function buildShareHtml({ canonicalUrl, title, description, imageUrl }) {
 `;
 }
 
+async function readSeoFile(fileName) {
+  const filePath = path.join(SEO_DIR, fileName);
+  try {
+    const raw = await fs.readFile(filePath, "utf8");
+    return JSON.parse(raw);
+  } catch {
+    return {};
+  }
+}
+
 async function parseEntry(fileName) {
   const filePath = path.join(PORTFOLIO_DIR, fileName);
   const raw = await fs.readFile(filePath, "utf8");
@@ -105,8 +116,54 @@ async function generate() {
     await fs.writeFile(outFile, buildShareHtml(entry), "utf8");
   }
 
+  // Static share pages for main SPA routes to avoid 404 in social scrapers.
+  const [seoPortfolio, seoAbout, seoContact] = await Promise.all([
+    readSeoFile("portfolio.json"),
+    readSeoFile("about.json"),
+    readSeoFile("contact.json"),
+  ]);
+
+  const staticPages = [
+    {
+      route: "portofoliu",
+      canonicalUrl: `${BASE_URL}/portofoliu`,
+      title: seoPortfolio.title || "Portofoliu | Cornel Iuganu Photography",
+      description:
+        seoPortfolio.description ||
+        "Explorează portofoliul meu de fotografie de evenimente: nunți, botezuri, portrete și peisaje.",
+      imageUrl: toAbsoluteUrl(seoPortfolio.og_image),
+    },
+    {
+      route: "despre",
+      canonicalUrl: `${BASE_URL}/despre`,
+      title: seoAbout.title || "Despre | Cornel Iuganu Photography",
+      description:
+        seoAbout.description ||
+        "Află povestea din spatele obiectivului. Cornel Iuganu. Fotograf profesionist cu peste 20 ani de experiență.",
+      imageUrl: toAbsoluteUrl(seoAbout.og_image),
+    },
+    {
+      route: "contact",
+      canonicalUrl: `${BASE_URL}/contact`,
+      title: seoContact.title || "Contact | Cornel Iuganu Photography",
+      description:
+        seoContact.description ||
+        "Contactează-mă pentru evenimentul tău. Cornel Iuganu. Fotograf profesionist de evenimente.",
+      imageUrl: toAbsoluteUrl(seoContact.og_image),
+    },
+  ];
+
+  for (const page of staticPages) {
+    const outDir = path.join(__dirname, "..", "public", page.route);
+    const outFile = path.join(outDir, "index.html");
+    await fs.mkdir(outDir, { recursive: true });
+    await fs.writeFile(outFile, buildShareHtml(page), "utf8");
+  }
+
   // eslint-disable-next-line no-console
-  console.log(`Share pages generated for ${files.length} portfolio entries.`);
+  console.log(
+    `Share pages generated for ${files.length} portfolio entries and ${staticPages.length} static routes.`
+  );
 }
 
 generate().catch((err) => {
