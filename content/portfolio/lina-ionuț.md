@@ -16,6 +16,5 @@ photos_bulk:
   - /images/uploads/corneliuganu012-4.jpg
   - /images/uploads/corneliuganu013-4.jpg
   - /images/uploads/corneliuganu014-2.jpg
-  - /images/uploads/corneliuganu015-2.jpg
 photos: []
 ---
