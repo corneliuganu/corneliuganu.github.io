@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm run generate:sitemap && npm run generate:share-pages && vite build",
+    "build": "npm run sync:index-seo && npm run generate:sitemap && npm run generate:share-pages && vite build",
+    "sync:index-seo": "node scripts/sync-index-seo.mjs",
     "generate:sitemap": "node scripts/generate-sitemap.mjs",
     "generate:share-pages": "node scripts/generate-share-pages.mjs",
     "build:dev": "vite build --mode development",

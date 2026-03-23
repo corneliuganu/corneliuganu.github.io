@@ -134,6 +134,16 @@ async function generate() {
       imageUrl: toAbsoluteUrl(seoPortfolio.og_image),
     },
     {
+      // Common misspelling alias; keeps share preview working.
+      route: "portofolio",
+      canonicalUrl: `${BASE_URL}/portofoliu`,
+      title: seoPortfolio.title || "Portofoliu | Cornel Iuganu Photography",
+      description:
+        seoPortfolio.description ||
+        "Explorează portofoliul meu de fotografie de evenimente: nunți, botezuri, portrete și peisaje.",
+      imageUrl: toAbsoluteUrl(seoPortfolio.og_image),
+    },
+    {
       route: "despre",
       canonicalUrl: `${BASE_URL}/despre`,
       title: seoAbout.title || "Despre | Cornel Iuganu Photography",
