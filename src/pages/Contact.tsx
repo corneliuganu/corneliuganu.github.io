@@ -59,6 +59,7 @@ const Contact = () => {
         <meta property="og:type" content="website" />
         <meta property="og:title" content={seo.title} />
         <meta property="og:description" content={seo.description} />
+        {seo.canonical && <meta property="og:url" content={seo.canonical} />}
         <meta property="og:image" content={seo.ogImage || undefined} />
       </Helmet>
 

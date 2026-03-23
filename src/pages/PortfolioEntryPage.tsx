@@ -36,6 +36,7 @@ const PortfolioEntryPage = () => {
   const photos = entry.photos.length
     ? entry.photos
     : [{ src: entry.image, alt: entry.title }];
+  const entryCanonical = `https://corneliuganu.github.io/portofoliu/${entry.slug}`;
 
   const [lightboxIdx, setLightboxIdx] = useState<number | null>(null);
 
@@ -78,12 +79,14 @@ const PortfolioEntryPage = () => {
           name="description"
           content={entry.description || `Galerie foto ${entry.title} — ${entry.category}.`}
         />
+        <link rel="canonical" href={entryCanonical} />
         <meta property="og:type" content="website" />
         <meta property="og:title" content={entry.title} />
         <meta
           property="og:description"
           content={entry.description || `Galerie foto ${entry.title} — ${entry.category}.`}
         />
+        <meta property="og:url" content={entryCanonical} />
         <meta property="og:image" content={entry.image} />
       </Helmet>
 

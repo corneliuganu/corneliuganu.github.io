@@ -153,7 +153,7 @@ export function useSeoHome(): SeoHome {
       schemaDescription:
         raw.schema_description || "Fotograf profesionist de evenimente",
       schemaCity: raw.schema_city || "București",
-      canonical: raw.canonical || "https://corneliuganu.ro",
+      canonical: raw.canonical || "https://corneliuganu.github.io",
       ogImage: raw.og_image,
     };
   }, [files]);
@@ -186,7 +186,7 @@ export function useSeoPortfolio(): SeoSimple {
         raw.description ||
         "Explorează portofoliul meu de fotografie de evenimente: nunți, botezuri, portrete și peisaje.",
       ogImage: raw.og_image,
-      canonical: raw.canonical || "https://corneliuganu.ro/portofoliu",
+      canonical: raw.canonical || "https://corneliuganu.github.io/portofoliu",
     };
   }, [files]);
 }
@@ -211,7 +211,7 @@ export function useSeoAbout(): SeoSimple {
         raw.description ||
         "Află povestea din spatele obiectivului. Cornel Iuganu — fotograf profesionist cu peste 12 ani de experiență.",
       ogImage: raw.og_image,
-      canonical: raw.canonical || "https://corneliuganu.ro/despre",
+      canonical: raw.canonical || "https://corneliuganu.github.io/despre",
     };
   }, [files]);
 }
@@ -236,7 +236,7 @@ export function useSeoContact(): SeoSimple {
         raw.description ||
         "Contactează-mă pentru evenimentul tău. Cornel Iuganu — fotograf profesionist de evenimente.",
       ogImage: raw.og_image,
-      canonical: raw.canonical || "https://corneliuganu.ro/contact",
+      canonical: raw.canonical || "https://corneliuganu.github.io/contact",
     };
   }, [files]);
 }
