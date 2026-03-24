@@ -20,9 +20,11 @@ const Portfolio = () => {
   const selectCategory = useCallback(
     (cat: string) => {
       setActive(cat);
-      // Keep router state in sync so useEffect / „înapoi” nu readuc filtrul vechi (ex. Nuntă când ai ales Botez).
+      const search =
+        cat === "Toate" ? "" : `?categorie=${encodeURIComponent(cat)}`;
+      // URL-ul e sursa de adevăr: la Botez vezi doar Botez, refresh/partajare păstrează filtrul.
       navigate(
-        { pathname: location.pathname, search: "" },
+        { pathname: location.pathname, search },
         {
           replace: true,
           state: cat === "Toate" ? {} : { fromCategory: cat },
@@ -38,29 +40,22 @@ const Portfolio = () => {
     setLightboxIdx(null);
   }, [location.key]);
 
-  // Keep category in navigation state (clean URL), with fallback for old query links.
+  // Categoria activă: mai întâi ?categorie= din URL (nu poate fi „uzurpată” de state vechi), apoi state.
   useEffect(() => {
     const fromState =
       (location.state as { fromCategory?: string } | null)?.fromCategory ?? null;
     const fromUrl = new URLSearchParams(location.search).get("categorie");
     const allowed = new Set(["Toate", ...categories]);
+    if (fromUrl && allowed.has(fromUrl)) {
+      setActive(fromUrl);
+      return;
+    }
     if (fromState && allowed.has(fromState)) {
       setActive(fromState);
       return;
     }
-    if (fromUrl && allowed.has(fromUrl)) {
-      setActive(fromUrl);
-      navigate(
-        { pathname: location.pathname, search: "" },
-        {
-          replace: true,
-          state: { fromCategory: fromUrl },
-        }
-      );
-      return;
-    }
     setActive("Toate");
-  }, [location.pathname, location.search, location.state, categories, navigate]);
+  }, [location.pathname, location.search, location.state, categories]);
 
   const filtered =
     active === "Toate"
@@ -152,7 +147,13 @@ const Portfolio = () => {
               {filtered.map((event) => (
                   <Link
                     key={event.slug}
-                    to={`/portofoliu/${event.slug}`}
+                    to={{
+                      pathname: `/portofoliu/${event.slug}`,
+                      search:
+                        active !== "Toate"
+                          ? `?categorie=${encodeURIComponent(active)}`
+                          : "",
+                    }}
                     state={{
                       fromCategory: active !== "Toate" ? active : undefined,
                     }}

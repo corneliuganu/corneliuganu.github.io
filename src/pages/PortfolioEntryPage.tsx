@@ -110,7 +110,14 @@ const PortfolioEntryPage = () => {
         <div className="container mx-auto px-4 py-8 md:py-12 pb-24 md:pb-32">
           <div className="mb-8">
             <Link
-              to="/portofoliu"
+              to={
+                fromCategory
+                  ? {
+                      pathname: "/portofoliu",
+                      search: `?categorie=${encodeURIComponent(fromCategory)}`,
+                    }
+                  : "/portofoliu"
+              }
               state={fromCategory ? { fromCategory } : undefined}
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-sm border border-gold text-gold hover:bg-gold hover:text-background transition-all font-body text-sm font-medium tracking-wider mb-6"
             >
