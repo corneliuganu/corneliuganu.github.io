@@ -4,7 +4,7 @@ url_slug: andra-dan
 category: Nuntă
 image: /images/uploads/corneliuganu15 mare.jpeg
 description: Cornel Iuganu Photography
-date: 2026-03-24T21:27:00
+date: 2026-03-24T22:01:00
 featured: false
 photos_bulk:
   - /images/uploads/corneliuganu01 mare.jpeg

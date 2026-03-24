@@ -1,5 +1,5 @@
 ---
-title: Al;exandra & Bogdan
+title: Alexandra & Bogdan
 url_slug: ''
 category: Nuntă
 image: /images/uploads/alexandra-si-bogdan18 mare.jpeg

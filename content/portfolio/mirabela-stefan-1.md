@@ -4,7 +4,7 @@ url_slug: mirabela-stefan
 category: Nuntă
 image: /images/uploads/cip00001 mare.jpeg
 description: Cornel Iuganu Photography
-date: 2026-03-24T21:31:00
+date: 2026-03-24T22:01:00
 featured: false
 photos_bulk:
   - /images/uploads/cip00001 mare.jpeg
