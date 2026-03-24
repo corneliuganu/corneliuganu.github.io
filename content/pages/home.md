@@ -2,7 +2,7 @@
 hero_badge: Fotograf de Evenimente
 hero_title: Cornel Iuganu
 hero_subtitle: Captez emoțiile autentice ale momentelor tale speciale. Nunți, botezuri, evenimente corporate, fiecare fotografie spune o poveste
-hero_image: /images/uploads/hero.jpg
+hero_image: /images/uploads/hero-1.jpg
 hero_cta_primary: Vezi Portofoliul
 hero_cta_secondary: Contactează-mă
 stat1_number: 500+

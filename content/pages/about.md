@@ -1,7 +1,7 @@
 ---
 section_label: Despre Mine
 title: Povestea din spatele obiectivului
-image: /images/uploads/Cornel aI Restore Portret B leumarin.png
+image: /images/uploads/CIB-1.jpg
 years_experience: 20
 ---
 
