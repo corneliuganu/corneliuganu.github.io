@@ -4,7 +4,7 @@ url_slug: mihai-lili-nunta
 category: Nuntă
 image: /images/uploads/Lili&Mihai00530 mare.jpeg
 description: Cornel Iuganu Photography
-date: 2026-03-24T22:48:00
+date: 2024-02-24T22:48:00
 featured: false
 photos_bulk:
   - /images/uploads/Lili&Mihai00547 mare.jpeg
