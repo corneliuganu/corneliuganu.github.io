@@ -1,7 +1,7 @@
 ---
 title: Anastasia & Elena
 url_slug: ''
-category: Botez
+category: Nuntă
 image: /images/uploads/1400x900-31.jpg
 description: Cornel Iuganu Photography
 date: 2026-03-23T22:41:00

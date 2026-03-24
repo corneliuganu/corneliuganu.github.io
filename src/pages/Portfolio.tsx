@@ -1,5 +1,5 @@
 import { useState, useCallback, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
 import { useLocation, Link, useNavigate } from "react-router-dom";
 import { ChevronLeft, ChevronRight, X, ArrowLeft } from "lucide-react";
@@ -16,6 +16,21 @@ const Portfolio = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const seo = useSeoPortfolio();
+
+  const selectCategory = useCallback(
+    (cat: string) => {
+      setActive(cat);
+      // Keep router state in sync so useEffect / „înapoi” nu readuc filtrul vechi (ex. Nuntă când ai ales Botez).
+      navigate(
+        { pathname: location.pathname, search: "" },
+        {
+          replace: true,
+          state: cat === "Toate" ? {} : { fromCategory: cat },
+        }
+      );
+    },
+    [location.pathname, navigate]
+  );
 
   // Reset gallery when navigating to /portofoliu (e.g. clicking nav link)
   useEffect(() => {
@@ -35,10 +50,13 @@ const Portfolio = () => {
     }
     if (fromUrl && allowed.has(fromUrl)) {
       setActive(fromUrl);
-      navigate(location.pathname, {
-        replace: true,
-        state: { fromCategory: fromUrl },
-      });
+      navigate(
+        { pathname: location.pathname, search: "" },
+        {
+          replace: true,
+          state: { fromCategory: fromUrl },
+        }
+      );
       return;
     }
     setActive("Toate");
@@ -117,7 +135,7 @@ const Portfolio = () => {
               {["Toate", ...categories].map((cat) => (
                 <button
                   key={cat}
-                  onClick={() => setActive(cat)}
+                  onClick={() => selectCategory(cat)}
                   className={`px-5 py-2 rounded-sm text-xs tracking-widest uppercase font-body transition-all duration-300 ${
                     active === cat
                       ? "gradient-gold text-background"
@@ -129,10 +147,9 @@ const Portfolio = () => {
               ))}
             </div>
 
-            {/* Events Grid */}
-            <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              <AnimatePresence mode="popLayout">
-                {filtered.map((event) => (
+            {/* Events Grid — fără AnimatePresence: animațiile de exit lăsau plăci „Nuntă” vizibile peste filtrele înguste */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {filtered.map((event) => (
                   <Link
                     key={event.slug}
                     to={`/portofoliu/${event.slug}`}
@@ -141,11 +158,9 @@ const Portfolio = () => {
                     }}
                   >
                     <motion.div
-                      layout
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0.9 }}
-                      transition={{ duration: 0.4 }}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.25 }}
                       className="group relative aspect-[4/3] overflow-hidden rounded-sm cursor-pointer"
                     >
                       <img
@@ -167,8 +182,7 @@ const Portfolio = () => {
                     </motion.div>
                   </Link>
                 ))}
-              </AnimatePresence>
-            </motion.div>
+            </div>
           </div>
         </div>
       

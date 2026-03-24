@@ -53,7 +53,7 @@ function slugify(input: string): string {
 }
 
 function parsePortfolioEntries(): PortfolioEntry[] {
-  return Object.entries(portfolioFiles).map(([filepath, raw]) => {
+  const rows = Object.entries(portfolioFiles).map(([filepath, raw]) => {
     const text = raw as string;
     const data = parseFrontmatter(text);
     const fileSlug = filepath.split("/").pop()?.replace(".md", "") || "";
@@ -62,7 +62,23 @@ function parsePortfolioEntries(): PortfolioEntry[] {
       (data.slug as string | undefined) ||
       "";
     const customSlug = slugify(customSlugRaw.trim());
-    const slug = customSlug || fileSlug;
+    const preferredSlug = customSlug || fileSlug;
+    return { filepath, text, data, fileSlug, preferredSlug };
+  });
+
+  const preferredCount = new Map<string, number>();
+  for (const r of rows) {
+    preferredCount.set(
+      r.preferredSlug,
+      (preferredCount.get(r.preferredSlug) || 0) + 1
+    );
+  }
+
+  return rows.map(({ data, fileSlug, preferredSlug }) => {
+    const slug =
+      (preferredCount.get(preferredSlug) || 0) > 1
+        ? fileSlug
+        : preferredSlug;
 
     const explicitPhotos: PortfolioPhoto[] = Array.isArray(data.photos)
       ? (data.photos as { image?: string; alt?: unknown }[]).map((p) => ({
