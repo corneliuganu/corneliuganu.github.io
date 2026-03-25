@@ -25,14 +25,11 @@ const Contact = () => {
     e.preventDefault();
     if (!formRef.current) return;
 
-    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-
-    if (!serviceId || !templateId || !publicKey) {
-      toast.error("Formularul nu este configurat corect. Lipsesc setările EmailJS.");
-      return;
-    }
+    // EmailJS IDs are baked-in so the static GitHub Pages build
+    // doesn't depend on runtime environment injection.
+    const serviceId = "service_pholpoi";
+    const templateId = "template_th25cdx";
+    const publicKey = "ydkspjpk6dnbu62mA";
 
     setSending(true);
     try {
