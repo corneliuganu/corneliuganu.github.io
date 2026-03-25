@@ -29,7 +29,7 @@ const Contact = () => {
     // doesn't depend on runtime environment injection.
     const serviceId = "service_pholpoi";
     const templateId = "template_th25cdx";
-    const publicKey = "ydkspjpk6dnbu62mA";
+    const publicKey = "ydkspjko6dnbU62mA";
 
     setSending(true);
     try {
