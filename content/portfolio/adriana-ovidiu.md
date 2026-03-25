@@ -27,7 +27,6 @@ photos_bulk:
   - /images/uploads/corneliuganu018 mare.jpeg
   - /images/uploads/corneliuganu019 mare.jpeg
   - /images/uploads/corneliuganu020 mare.jpeg
-  - /images/uploads/corneliuganu021 mare.jpeg
   - /images/uploads/corneliuganu022 mare.jpeg
   - /images/uploads/corneliuganu023 mare.jpeg
   - /images/uploads/corneliuganu024 mare.jpeg
