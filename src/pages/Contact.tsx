@@ -167,18 +167,13 @@ const Contact = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
                   <label className="font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2.5 block">Tip Eveniment</label>
-                  <select
+                  <input
+                    type="text"
                     required
                     name="event_type"
-                    className="w-full bg-transparent border-b-2 border-border px-0 py-3 font-body text-sm text-foreground focus:border-gold focus:outline-none transition-colors"
-                  >
-                    <option value="">Selectează tipul</option>
-                    <option value="nunta">Nuntă</option>
-                    <option value="botez">Botez</option>
-                    <option value="corporate">Eveniment Corporate</option>
-                    <option value="festival">Festival</option>
-                    <option value="altul">Altul</option>
-                  </select>
+                    className="w-full bg-transparent border-b-2 border-border px-0 py-3 font-body text-sm text-foreground placeholder:text-muted-foreground/40 focus:border-gold focus:outline-none transition-colors"
+                    placeholder="Ce tip de eveniment este?"
+                  />
                 </div>
                 <div>
                   <label className="font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2.5 block">Data Evenimentului</label>
