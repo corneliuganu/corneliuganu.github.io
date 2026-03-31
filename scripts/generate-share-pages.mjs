@@ -59,17 +59,17 @@ function buildShareHtml({ canonicalUrl, title, description, imageUrl }) {
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
-    <script>
-      (function () {
-        var path = window.location.pathname;
-        var search = window.location.search || "";
-        var hash = window.location.hash || "";
-        var target = "/?p=" + encodeURIComponent(path) + (search ? "&" + search.slice(1) : "") + hash;
-        window.location.replace(target);
-      })();
-    </script>
+    <meta name="robots" content="index,follow" />
   </head>
-  <body></body>
+  <body>
+    <main style="font-family: Arial, sans-serif; max-width: 760px; margin: 56px auto; padding: 0 16px; line-height: 1.6;">
+      <h1 style="font-size: 28px; margin: 0 0 12px;">${safeTitle}</h1>
+      <p style="margin: 0 0 20px; color: #444;">${safeDescription}</p>
+      <p style="margin: 0;">
+        <a href="${safeCanonical}" style="color: #b8860b; text-decoration: none;">Deschide pagina</a>
+      </p>
+    </main>
+  </body>
 </html>
 `;
 }
@@ -105,6 +105,8 @@ async function parseEntry(fileName) {
 }
 
 async function generate() {
+  // Remove previously generated share pages to avoid stale redirecting files.
+  await fs.rm(OUTPUT_DIR, { recursive: true, force: true });
   await fs.mkdir(OUTPUT_DIR, { recursive: true });
   const files = (await fs.readdir(PORTFOLIO_DIR)).filter((f) => f.endsWith(".md"));
 
