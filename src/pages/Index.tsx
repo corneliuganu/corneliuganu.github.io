@@ -1,15 +1,38 @@
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import HeroSection from "@/components/HeroSection";
-import { usePortfolio } from "@/hooks/use-portfolio";
+import { useHomeFeaturedWorks } from "@/hooks/use-home-featured";
 import { useHomeContent, useSeoHome } from "@/hooks/use-site-content";
 import portfolioWedding1 from "@/assets/portfolio-wedding-1.jpg";
 
 const Index = () => {
-  const { latestByCategory } = usePortfolio();
+  const latestByCategory = useHomeFeaturedWorks();
   const home = useHomeContent();
   const seo = useSeoHome();
+  const featuredAnchorRef = useRef<HTMLDivElement | null>(null);
+  const [showFeaturedCards, setShowFeaturedCards] = useState(false);
+
+  useEffect(() => {
+    const el = featuredAnchorRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          setShowFeaturedCards(true);
+          observer.disconnect();
+        }
+      },
+      {
+        rootMargin: "200px 0px",
+      }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <>
@@ -61,6 +84,7 @@ const Index = () => {
       {/* Featured Work */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
+          <div ref={featuredAnchorRef} />
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -79,34 +103,43 @@ const Index = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-            {latestByCategory.map((work, i) => (
-              <Link
-                key={work.slug}
-                to={`/portofoliu?categorie=${encodeURIComponent(work.category)}`}
-              >
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.15, duration: 0.6 }}
-                  className="group relative aspect-[4/3] md:aspect-[3/4] overflow-hidden rounded-sm cursor-pointer"
+          {showFeaturedCards ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+              {latestByCategory.map((work, i) => (
+                <Link
+                  key={work.slug}
+                  to={`/portofoliu?categorie=${encodeURIComponent(work.category)}`}
                 >
-                  <img
-                    src={work.image}
-                    alt={work.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex items-end p-6">
-                    <span className="font-body text-base tracking-widest uppercase text-white dark:text-gold">
-                      {{"Nunți": "Nuntă", "Botezuri": "Botez", "Corporate": "Portret", "Festivaluri": "Peisaj"}[work.category] || work.category}
-                    </span>
-                  </div>
-                </motion.div>
-              </Link>
-            ))}
-          </div>
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.15, duration: 0.6 }}
+                    className="group relative aspect-[4/3] md:aspect-[3/4] overflow-hidden rounded-sm cursor-pointer"
+                  >
+                    <img
+                      src={work.image}
+                      alt={work.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex items-end p-6">
+                      <span className="font-body text-base tracking-widest uppercase text-white dark:text-gold">
+                        {{"Nunți": "Nuntă", "Botezuri": "Botez", "Corporate": "Portret", "Festivaluri": "Peisaj"}[work.category] || work.category}
+                      </span>
+                    </div>
+                  </motion.div>
+                </Link>
+              ))}
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+              {latestByCategory.map((work) => (
+                <div key={work.slug} className="aspect-[4/3] md:aspect-[3/4] rounded-sm bg-card/40 border border-border/40" />
+              ))}
+            </div>
+          )}
 
           <div className="text-center mt-10">
             <Link
