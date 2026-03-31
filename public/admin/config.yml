@@ -171,7 +171,7 @@ collections:
           - { label: "Schema.org Oraș", name: "schema_city", widget: "string" }
           - { label: "Limba site-ului (ex. ro-RO)", name: "language", widget: "string", required: false, hint: "Cod de limbă pentru homepage, recomandat ro-RO pentru limba română." }
           - { label: "Canonical URL", name: "canonical", widget: "string", required: false }
-          - { label: "Open Graph Image (1200x630)", name: "og_image", widget: "image", required: false }
+          - { label: "Open Graph Image (1200x630)", name: "og_image", widget: "image", required: false, hint: "Această imagine este folosită pe homepage la Open Graph și în JSON-LD (schema image pentru ProfessionalService)." }
 
       - label: "Portofoliu"
         name: "portfolio"

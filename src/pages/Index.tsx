@@ -31,7 +31,7 @@ const Index = () => {
             "name": seo.schemaName,
             "description": seo.schemaDescription,
             "address": { "@type": "PostalAddress", "addressLocality": seo.schemaCity, "addressCountry": "RO" },
-            "image": "https://corneliuganu.github.io/images/uploads/CIB.jpg",
+            "image": seo.ogImage || portfolioWedding1,
           })}
         </script>
       </Helmet>
