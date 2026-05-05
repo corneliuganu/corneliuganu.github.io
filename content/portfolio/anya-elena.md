@@ -4,8 +4,8 @@ url_slug: Anya Elena
 category: Botez
 image: /images/uploads/Anya_site-12.jpg
 description: Cornel Iuganu Photography
-date: 2026-05-05T12:22:00
-featured: false
+date: 2026-04-25T12:22:00
+featured: true
 photos_bulk:
   - /images/uploads/Anya_site-1.jpg
   - /images/uploads/Anya_site-10.jpg
