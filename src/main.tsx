@@ -13,5 +13,6 @@ import "@fontsource/raleway/latin-ext-500.css";
 import "@fontsource/raleway/latin-ext-700.css";
 import App from "./App.tsx";
 import "./index.css";
+import "./mobile-menu.css";
 
 createRoot(document.getElementById("root")!).render(<App />);

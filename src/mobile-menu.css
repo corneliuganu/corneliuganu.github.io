@@ -1,0 +1,54 @@
+/* Meniul mobil — identic cu cel de pe aurelianepuras.github.io (dimensiuni, animații, X în cerc, întrerupător de temă).
+   Culorile și fonturile vin din acest site (variabilele --mm-* de mai jos). */
+
+:root{
+  --mm-bg:hsl(var(--background)); --mm-bg-2:hsl(var(--muted)); --mm-fg:hsl(var(--foreground)); --mm-accent:hsl(var(--gold));
+  --mm-mute:color-mix(in srgb,var(--mm-fg) 60%,transparent); --mm-line:color-mix(in srgb,var(--mm-fg) 13%,transparent);
+  --mm-title:700 clamp(19px,5vw,24px)/1.2 "Playfair Display",serif; --mm-title-ls:.02em; --mm-title-tt:none; --mm-small:"Raleway",sans-serif;
+  --mm-ease:cubic-bezier(.16,1,.3,1); --mm-hdr-h:78px;
+}
+
+.burger{display:none;position:relative;width:48px;height:48px;margin-right:-10px;padding:0;border:0;background:none;cursor:pointer;place-items:center;-webkit-tap-highlight-color:transparent}
+.burger::before{content:"";position:absolute;inset:9px;border:1px solid var(--mm-line);border-radius:50%;opacity:0;transform:scale(.6);transition:opacity .3s,transform .45s var(--mm-ease)}
+.menu-open .burger::before{opacity:1;transform:none}
+.burger span{position:relative;display:block;width:28px;height:10px;transition:width .5s cubic-bezier(.76,0,.24,1)}
+.burger i{position:absolute;right:0;height:1.5px;background:var(--mm-fg);transition:transform .6s cubic-bezier(.76,0,.24,1),width .5s cubic-bezier(.76,0,.24,1)}
+.burger i:first-child{top:0;width:28px}
+.burger i:last-child{top:8.5px;width:17px}
+.menu-open .burger span{width:14px}
+.menu-open .burger i:first-child{width:14px;transform:translateY(4.25px) rotate(45deg)}
+.menu-open .burger i:last-child{width:14px;transform:translateY(-4.25px) rotate(-45deg)}
+
+.mmenu{position:fixed;inset:0;z-index:45;display:flex;flex-direction:column;justify-content:flex-start;padding:calc(var(--mm-hdr-h) + 24px) clamp(24px,6vw,56px) max(14px,env(safe-area-inset-bottom));background:var(--mm-bg);color:var(--mm-fg);overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;clip-path:circle(0 at calc(100% - 44px) 39px);visibility:hidden;transition:clip-path .6s cubic-bezier(.7,0,.3,1),visibility 0s linear .6s}
+.menu-open .mmenu{clip-path:circle(150% at calc(100% - 44px) 39px);visibility:visible;transition:clip-path .6s cubic-bezier(.7,0,.3,1),visibility 0s}
+.mnav{display:flex;flex-direction:column;margin:auto 0}
+.mnav a{display:flex;align-items:baseline;gap:14px;padding:11px 0 9px;border-bottom:1px solid var(--mm-line);-webkit-tap-highlight-color:transparent;opacity:0;transform:translateY(18px);transition:opacity .4s,transform .5s cubic-bezier(.2,.7,.2,1)}
+.menu-open .mnav a{opacity:1;transform:none;transition-delay:var(--dl)}
+.mnav small{font:400 10px var(--mm-small);letter-spacing:.1em;color:var(--mm-accent);width:24px;flex:none}
+.mnav b{font:var(--mm-title);letter-spacing:var(--mm-title-ls);text-transform:var(--mm-title-tt)}
+.mnav a.on b{color:var(--mm-accent)}
+.mfoot{padding-top:28px;display:flex;flex-direction:column;gap:4px;opacity:0;transform:translateY(18px);transition:opacity .4s,transform .5s cubic-bezier(.2,.7,.2,1)}
+.menu-open .mfoot{opacity:1;transform:none;transition-delay:.55s}
+.mlinks{display:flex;flex-wrap:wrap;gap:0 18px}
+.mlinks a{display:inline-flex;align-items:center;padding:5px 0;font:400 11px var(--mm-small);letter-spacing:.14em;text-transform:uppercase;color:var(--mm-mute);transition:color .25s}
+.mlinks a:hover{color:var(--mm-accent)}
+.mbreak{flex-basis:100%;height:0}
+
+.mtheme{display:none;align-items:center;min-height:44px;padding:0 4px;background:transparent;border:0;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.sw{position:relative;display:block;width:56px;height:30px;border:1px solid var(--mm-line);border-radius:999px;background:var(--mm-bg-2)}
+.sw-knob{position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:var(--mm-accent);transition:transform .45s var(--mm-ease)}
+.dark .sw-knob{transform:translateX(26px)}
+.sw svg{position:absolute;top:7px;width:14px;height:14px;color:var(--mm-mute);transition:color .3s}
+.sw .sw-sun{left:7px}
+.sw .sw-moon{right:7px}
+.sw .sw-sun,.dark .sw .sw-moon{color:var(--mm-bg)}
+.dark .sw .sw-sun{color:var(--mm-mute)}
+@keyframes mtheme-in{from{opacity:0}to{opacity:1}}
+@media (max-width:767px){
+  .burger{display:grid}
+  .menu-open .mtheme{display:inline-flex;animation:mtheme-in .4s .3s both}
+}
+@media (max-width:480px){.mtheme{padding:0}}
+@media (min-width:768px){.mmenu{display:none}}
+html.menu-open,html.menu-open body{overflow:hidden}
+@media (prefers-reduced-motion:reduce){.mmenu,.mnav a,.mfoot,.burger *,.burger::before,.sw-knob{transition-duration:.01ms!important;transition-delay:0s!important}}
